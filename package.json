@@ -1,17 +1,20 @@
 {
-  "name": "lib-markdown",
-  "version": "0.2.0",
+  "name": "lib-markdown_url_extractor",
+  "version": "0.3.0",
   "description": "",
-  "main": "index.js",
+  "main": "cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "try": "node cli.js ./files/text1.md"
+    "try": "node cli.js ./files",
+    "check1": "node cli.js ./files -c",
+    "check2": "node cli.js ./files --check"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "node-fetch": "^3.2.6"
   }
 }

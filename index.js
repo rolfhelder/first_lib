@@ -20,7 +20,7 @@ function getLinks(text) {
   return resultArray.length === 0 ? 'No links found on archive' : resultArray;
 }
 
-function processError(err) {
+function handleError(err) {
   throw err = new Error(chalk.redBright(err.code,'!!!file path error!!!'));
 }
 
@@ -41,7 +41,7 @@ async function getUrlLinksFromFolder(folderPath) {
   
   return linkArray;
   } catch(err){
-    processError(err);
+    handleError(err);
   } 
 } 
 
@@ -66,7 +66,7 @@ async function getUrlLinksFromFolder(folderPath) {
     }));
     return result;
   } catch (err) {
-    return processError(err);
+    return handleError(err);
   }
  }
  */
@@ -89,7 +89,7 @@ async function getUrlLinksFromFile(filePath) {
   //console.log(linkArray);
   return linkArray;
   } catch(err){
-    processError(err);
+    handleError(err);
   } 
 } 
 */
@@ -101,7 +101,7 @@ function getUrlLinksFromFile(filePath) {
   fs.promises
     .readFile(filePath, encoding)
     .then(data => console.log(chalk.green(data)))
-    .catch((err) => processError(err))
+    .catch((err) => handleError(err))
   }
 */
 
@@ -112,7 +112,7 @@ function getUrlLinksFromFile(filePath) {
   fs.readFile(filePath, encoding , (err,data) => {
 
     if(err){
-      processError(err);
+      handleError(err);
     }
 
     console.log(chalk.green(data));
