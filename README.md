@@ -15,6 +15,12 @@
   <a href="#license">License</a>
 </p>
 
+<p align="center">
+  Download at&nbsp;&nbsp; 
+  <a href="https://github.com/rolfhelder/md-url-checker">Github</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="https://www.npmjs.com/package/md-url-checker">NPM</a>
+</p>
+
 <h2 id="project">💻 Project</h2>
 
 This is a NodeJS module to extract url links — with an option to see if the links are broken or not — from a markdown file or a file following markdown syntax of the type:
