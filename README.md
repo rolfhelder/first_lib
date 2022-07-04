@@ -1,4 +1,4 @@
-<h1>NodeJS Library to checker urlUrl a markdown file</h1> 
+<h1>NodeJS Library to extract url from a markdown file and check its status</h1> 
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=NodeJS&message=16.15.1&color=green&style=for-the-badge&logo=typescript"/>
