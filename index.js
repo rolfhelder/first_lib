@@ -1,10 +1,7 @@
-import { match } from 'assert';
-import chalk from 'chalk';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-console.log(chalk.blue('Begin!'));
 
 // getLinks with regex.exec
 function getLinks(text) {
@@ -21,15 +18,23 @@ function getLinks(text) {
 }
 
 function handleError(err) {
-  throw err = new Error(chalk.redBright(err.code,'!!!file path error!!!'));
+  throw err = new Error(err.code,'!!!file path error!!!');
 }
 
 async function getUrlLinksFromFolder(folderPath) {
   const encoding = 'utf-8';
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
-  const absolutePath = path.join(__dirname,folderPath)
   const linkArray = []
+  let absolutePath;
+
+  // check if user inserted absolute or relative path.
+  if(folderPath.includes(__dirname)) {
+      absolutePath = folderPath;
+  } else {
+      absolutePath = path.join(__dirname,folderPath)
+  }
+  
   try {
   const folder = await fs.promises.readdir(absolutePath,{encoding})
   for (const file of folder) {
@@ -45,7 +50,7 @@ async function getUrlLinksFromFolder(folderPath) {
   } 
 } 
 
-export {getUrlLinksFromFolder as default}
+export {getLinks, getUrlLinksFromFolder}
 
 // Example functions with diferent forms than the final code
 

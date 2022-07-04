@@ -1,20 +1,37 @@
 {
-  "name": "lib-markdown_url_extractor",
-  "version": "0.3.0",
-  "description": "",
-  "main": "cli.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "try": "node cli.js ./files",
-    "check1": "node cli.js ./files -c",
-    "check2": "node cli.js ./files --check"
+  "name": "md-url-checker",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.15.1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "A lib to find and check url link status from a markdown file.",
+  "main": "./cli.js",
+  "keywords": [
+    "markdown",
+    "URL",
+    "status code"
+  ],
+  "author": "Rolf Meneses (https://github.com/rolfhelder/)",
+  "homepage": "https://github.com/rolfhelder/md-url-checker",
+  "bugs": "https://github.com/rolfhelder/md-url-checker/issues",
+  "license": "MIT",
+  "bin": {
+    "md-url-checker": "./cli.js"
+  },
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest ./test",
+    "url": "node cli.js ./files",
+    "url-status": "node cli.js ./files -c"
+  },
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolfhelder/md-url-checker.git"
+  },
   "dependencies": {
-    "chalk": "^4.1.2",
     "node-fetch": "^3.2.6"
+  },
+  "devDependencies": {
+    "jest": "^28.1.2"
   }
 }
